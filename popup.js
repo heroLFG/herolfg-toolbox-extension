@@ -3,8 +3,7 @@ chrome.storage.local.get(['messages'], function (result) {
     const messages = result.messages || [];
     const messagesDiv = document.getElementById('messages');
     messages.forEach(message => {
-      const messageDiv = document.createElement('div');
-      messageDiv.textContent = message;
+      const messageDiv = createMessageDiv(message);
       messagesDiv.appendChild(messageDiv);
     });
   });
@@ -29,8 +28,7 @@ chrome.storage.local.get(['messages'], function (result) {
     const message = input.value.trim();
     if (message) {
       const messagesDiv = document.getElementById('messages');
-      const messageDiv = document.createElement('div');
-      messageDiv.textContent = message;
+      const messageDiv = createMessageDiv(message);
       messagesDiv.appendChild(messageDiv);
       saveMessage(message);
       input.value = '';
@@ -57,3 +55,11 @@ chrome.storage.local.get(['messages'], function (result) {
     window.close();
   });
   
+  // Helper function to create a message div with proper formatting
+  function createMessageDiv(message) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message';
+    messageDiv.innerHTML = message.replace(/\n/g, '<br>');
+    return messageDiv;
+  }
+      

@@ -1,3 +1,12 @@
+.message {
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    word-break: break-word; /* This ensures that long words are wrapped */
+  }
+  
 #header {
     display: flex;
     justify-content: flex-end;
