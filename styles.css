@@ -1,6 +1,22 @@
-#messenger {
+/* Header styles */
+#header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+  }
+  
+  #closeButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  /* Existing styles */
+  #messenger {
     width: 300px;
-    height: 400px;
+    height: 350px; /* Adjusted to accommodate the header */
     display: flex;
     flex-direction: column;
     border: 1px solid #ccc;
